@@ -1,0 +1,545 @@
+/* ============================================
+   UNDERTALE Web Recreation - Menu Styles
+   ============================================ */
+
+/* ============================================
+   In-Game Menu (Overworld)
+   ============================================ */
+#game-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 580px;
+    background: var(--color-black);
+    border: 4px solid var(--color-white);
+    z-index: 200;
+}
+
+.menu-section {
+    padding: 15px;
+}
+
+/* Menu Tabs */
+.menu-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--color-white);
+    margin-bottom: 15px;
+}
+
+.menu-tab {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    color: var(--color-white);
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-tab.active {
+    color: var(--color-yellow);
+}
+
+.menu-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-yellow);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    min-height: 200px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================================
+   Item Tab
+   ============================================ */
+#item-tab {
+    padding: 10px;
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-entry {
+    font-size: 22px;
+    color: var(--color-white);
+    padding: 5px 10px;
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.item-entry.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 5px;
+    color: var(--color-red);
+}
+
+.item-entry:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Item use submenu */
+.item-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+.item-action {
+    font-size: 20px;
+    color: var(--color-white);
+    padding: 5px 10px;
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.item-action.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 5px;
+    color: var(--color-red);
+}
+
+/* ============================================
+   Stats Tab (じょうたい)
+   ============================================ */
+#stat-tab {
+    padding: 15px;
+}
+
+.stat-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-section {
+    padding: 10px;
+}
+
+.stat-section h3 {
+    font-size: 20px;
+    color: var(--color-yellow);
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.stat-line {
+    font-size: 18px;
+    color: var(--color-white);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-label {
+    color: #aaaaaa;
+}
+
+.stat-value {
+    color: var(--color-white);
+}
+
+/* Equipment display */
+.equipment-section {
+    margin-top: 20px;
+    grid-column: span 2;
+}
+
+.equipment-slot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.equipment-type {
+    color: var(--color-yellow);
+    width: 80px;
+}
+
+.equipment-name {
+    color: var(--color-white);
+    flex: 1;
+}
+
+/* ============================================
+   Cell Phone Tab (でんわ)
+   ============================================ */
+#cell-tab {
+    padding: 15px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-entry {
+    font-size: 22px;
+    color: var(--color-white);
+    padding: 8px 15px;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.contact-entry.selected {
+    border-color: var(--color-white);
+}
+
+.contact-entry.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 10px;
+    color: var(--color-red);
+}
+
+.contact-entry:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* No contacts message */
+.no-contacts {
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    padding: 40px;
+}
+
+/* ============================================
+   Save/Load Menu
+   ============================================ */
+.save-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: var(--color-black);
+    border: 4px solid var(--color-white);
+    padding: 20px;
+    z-index: 300;
+}
+
+.save-menu h2 {
+    font-size: 28px;
+    color: var(--color-yellow);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.save-slot {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #444;
+    cursor: pointer;
+    position: relative;
+}
+
+.save-slot.selected {
+    border-color: var(--color-white);
+}
+
+.save-slot.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-red);
+}
+
+.save-slot-empty {
+    color: #666666;
+    font-style: italic;
+}
+
+.save-info {
+    font-size: 18px;
+    color: var(--color-white);
+}
+
+.save-location {
+    color: var(--color-yellow);
+    margin-bottom: 5px;
+}
+
+.save-stats {
+    display: flex;
+    gap: 20px;
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
+/* ============================================
+   Settings Menu
+   ============================================ */
+.settings-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background: var(--color-black);
+    border: 4px solid var(--color-white);
+    padding: 25px;
+    z-index: 300;
+}
+
+.settings-menu h2 {
+    font-size: 28px;
+    color: var(--color-yellow);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    color: var(--color-white);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.setting-item.selected {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.setting-item.selected::before {
+    content: '♥';
+    position: absolute;
+    left: -5px;
+    color: var(--color-red);
+}
+
+.setting-label {
+    color: var(--color-white);
+}
+
+.setting-value {
+    color: var(--color-yellow);
+}
+
+/* Slider for volume */
+.setting-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-track {
+    width: 150px;
+    height: 8px;
+    background: #333;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider-fill {
+    height: 100%;
+    background: var(--color-yellow);
+}
+
+.slider-value {
+    min-width: 40px;
+    text-align: right;
+    color: var(--color-yellow);
+}
+
+/* Toggle for options */
+.setting-toggle {
+    padding: 3px 15px;
+    border: 2px solid var(--color-white);
+}
+
+.setting-toggle.on {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+/* ============================================
+   Inventory Full Message
+   ============================================ */
+.inventory-full {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-black);
+    border: 3px solid var(--color-white);
+    padding: 15px 25px;
+    font-size: 22px;
+    color: var(--color-white);
+    z-index: 150;
+}
+
+/* ============================================
+   Shop Menu
+   ============================================ */
+.shop-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-black);
+    z-index: 200;
+}
+
+.shop-header {
+    padding: 20px;
+    border-bottom: 2px solid var(--color-white);
+}
+
+.shop-keeper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.shop-keeper-sprite {
+    width: 80px;
+    height: 80px;
+}
+
+.shop-keeper-text {
+    font-size: 22px;
+    color: var(--color-white);
+    flex: 1;
+}
+
+.shop-options {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.shop-option {
+    font-size: 24px;
+    color: var(--color-white);
+    padding: 10px 20px;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.shop-option.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 10px;
+    color: var(--color-red);
+}
+
+.shop-items {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.shop-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: var(--color-white);
+    padding: 10px;
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.shop-item.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 5px;
+    color: var(--color-red);
+}
+
+.shop-item.sold-out {
+    color: #666666;
+}
+
+.shop-item-price {
+    color: var(--color-yellow);
+}
+
+.shop-gold {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    color: var(--color-yellow);
+}
+
+/* ============================================
+   Dimensional Box Menu
+   ============================================ */
+.box-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.box-column {
+    border: 2px solid var(--color-white);
+    padding: 15px;
+}
+
+.box-column h3 {
+    font-size: 20px;
+    color: var(--color-yellow);
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.box-item {
+    font-size: 18px;
+    color: var(--color-white);
+    padding: 5px 10px;
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.box-item.selected::before {
+    content: '♥';
+    position: absolute;
+    left: 5px;
+    color: var(--color-red);
+}
+
+.box-empty {
+    color: #666666;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
