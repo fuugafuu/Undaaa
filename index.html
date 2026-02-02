@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDERTALE Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <!-- Title Screen -->
+        <div id="title-screen" class="screen active">
+            <h1 class="title">UNDERTALE</h1>
+            <div class="menu">
+                <button class="menu-item active" onclick="startGame()">はじめから</button>
+            </div>
+            <div class="controls-info">
+                <p>矢印キー/WASD: 移動</p>
+                <p>Z/Enter: 決定</p>
+            </div>
+        </div>
+
+        <!-- Name Screen -->
+        <div id="name-screen" class="screen">
+            <p class="name-prompt">なまえを　つけてください</p>
+            <div class="name-display">
+                <span id="name-text"></span><span class="cursor">_</span>
+            </div>
+            <input type="text" id="name-input" maxlength="6" autocomplete="off">
+            <button onclick="confirmName()">けってい</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <canvas id="canvas" width="640" height="480"></canvas>
+            <div id="info">
+                <span id="player-info">HP 20/20</span>
+                <span id="room-info"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
